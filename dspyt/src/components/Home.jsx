@@ -1,6 +1,27 @@
 import React from "react";
 
-function Home() {
+class Example extends React.Component {
+  componentDidMount() {
+    // NOTE
+    // API endpoint to get total storage in bytes
+    // total files added to Filecoin
+    fetch('https://api.estuary.tech/public/stats')
+      .then(data => {
+        return data.json();
+      })
+      .then(data => {
+        this.setState({ ...data });
+      });
+  }
+
+  render() {
+    return <pre>{JSON.stringify(this.state, null, 1)}</pre>;
+  }
+}
+
+export default Example;
+
+/* function Home() {
   return (
     <div className="home">
       <div class="container">
@@ -15,6 +36,7 @@ function Home() {
           <div class="col-lg-5">
             <h1 class="font-weight-light">Home</h1>
             <p>
+              {metadata.url}
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
@@ -27,4 +49,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home; */
