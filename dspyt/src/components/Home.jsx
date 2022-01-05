@@ -2,14 +2,14 @@ import React from "react";
 
 class Example extends React.Component {
   componentDidMount() {
-    var url = 'https://api.nft.storage/?before=2020-07-27T17%3A32%3A28Z&limit=10'
+    var url = process.env.REACT_APP_URL
     // NOTE
     // API endpoint to get total storage in bytes
     // total files added to Filecoin
-    fetch(url,{
+    fetch(url, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${env.api}'
+        'Authorization': process.env.REACT_APP_API
       }
     })
       .then(data => {
