@@ -17,6 +17,8 @@ function Home() {
         Authorization: process.env.REACT_APP_API
       }
     })
+    console.log(response.status)
+    console.log(response.data.value)
     setComments(response.data.value)
     setIsLoading(false)
   }
