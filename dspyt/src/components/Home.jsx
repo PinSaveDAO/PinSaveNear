@@ -18,7 +18,7 @@ function Home() {
       }
     })
     console.log(response.status)
-    console.log(response.data.value)
+    console.log(response.data)
     setComments(response.data.value)
     setIsLoading(false)
   }
