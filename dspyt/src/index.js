@@ -7,7 +7,7 @@ import {
   Navigation,
   Footer,
   Home,
-  About,
+  Upload,
   Blog,
   Posts,
   Post,
@@ -18,7 +18,7 @@ ReactDOM.render(
     <Navigation />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/upload" element={<Upload />} />
       <Route path="/blog" element={<Blog />}>
         <Route path="" element={<Posts />} />
         <Route path=":postSlug" element={<Post />} />
