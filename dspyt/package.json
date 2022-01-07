@@ -2,11 +2,21 @@
   "name": "dspyt",
   "version": "0.1.0",
   "private": true,
+  "browser": {
+    "crypto": false,
+    "fs": false,
+    "path": false,
+    "os": false,
+    "net": false,
+    "stream": false,
+    "tls": false
+    },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
+    "fs": "^0.0.1-security",
     "nft.storage": "^5.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

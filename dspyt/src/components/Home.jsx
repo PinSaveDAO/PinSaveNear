@@ -2,16 +2,14 @@ import React, {useState, useEffect} from "react";
 import axios from 'axios'
 
 function Home() {
-  const [comments, setComments]= useState([])
+  const [comments, setComments] = useState([])
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchComments();
-  }, [])
-  useEffect(() => {
-    console.log(comments)
   }, [comments])
-  const fetchComments=async()=>{
+
+  const fetchComments = async()=>{
     const response=await axios({
       method: 'get',
       url: process.env.REACT_APP_URL,
@@ -19,13 +17,14 @@ function Home() {
         Authorization: process.env.REACT_APP_API
       }
     })
-    console.log(response.data.value.length)
     setComments(response.data.value)
     setIsLoading(false)
   }
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div class="container">
+      <div>Loading...</div>
+      </div>
   }
 
   return (
@@ -46,7 +45,7 @@ function Home() {
               {`cid:${x.cid}`}
             </p>
           ))
-        }
+          }
             <br></br>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
