@@ -5,7 +5,6 @@ import "./index.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   Navigation,
-  Footer,
   Home,
   Upload,
   Blog,
@@ -24,7 +23,6 @@ ReactDOM.render(
         <Route path=":postSlug" element={<Post />} />
       </Route>
     </Routes>
-    <Footer />
   </Router>,
 
   document.getElementById("root")
