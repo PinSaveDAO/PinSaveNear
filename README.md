@@ -12,22 +12,26 @@ An interactive web application to upload and view images. The application intera
 under development
 
 ## Previews
-<!--Add some screenshots to give a preview of your product-->
+![](assets\\image1.jpg)
 
 ## Target Audience
-<!--Describe who will be your project's users-->
+
+Non-Developers that require to store images on IPFS
 
 ## Rough estimated user base (if applicable)
 <!--How many users do you have right now?-->
 
 ## Github repo
-<!--Attach a link to your GitHub repo if it's OSS-->
+
+[Dspyt-NFTs](https://github.com/dspytdao/Dspyt-NFTs)
 
 ## Website
+
 https://file-coin-mint.vercel.app/
 
 ## Docs
-<!--Including a link to your project docs!-->
+
+[Docs](https://github.com/dspytdao/Dspyt-NFTs/blob/main/dspyt/README.md)
 
 ## Team Info
 

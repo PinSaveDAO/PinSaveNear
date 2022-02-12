@@ -7,7 +7,7 @@ function Navigation() {
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="container">
           <NavLink className="navbar-brand" to="/">
-            Website
+            Dspyt-NFTs
           </NavLink>
           <div>
             <ul className="navbar-nav ml-auto">
@@ -24,7 +24,7 @@ function Navigation() {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/blog">
-                  Blog
+                  About
                 </NavLink>
               </li>
             </ul>

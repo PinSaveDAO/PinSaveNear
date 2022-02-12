@@ -45,7 +45,7 @@ function Upload() {
 
   return (
     <div>
-      <h1>Upload and Display Image</h1>
+      <h1 className="text-center mt-5">Upload and Display Image</h1>
       {selectedImage && (
         <div>
         <img alt="not found" width="250px" src={URL.createObjectURL(selectedImage)} />
@@ -75,7 +75,7 @@ function Upload() {
       )}
 
       {data && (
-        <div> 
+        <div > 
           {data}
         </div>
       )}

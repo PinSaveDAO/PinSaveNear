@@ -11,25 +11,10 @@ function Post() {
   return (
     <div className="home">
       <div class="container">
-        <h1 className="mt-5">This is a Post Title</h1>
-        <h6 className="mb-5">The post slug is, {postSlug}</h6>
+        <h1 className="mt-5">Dspyt-NFTs</h1>
+        <h6 className="mb-5"> {postSlug} </h6>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-        </p>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-        </p>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+        An interactive web application to upload and view images. The application interacts with Filecoin and IPFS. In particular, nft.storage provides api access for the applciation to store files.
         </p>
       </div>
     </div>
