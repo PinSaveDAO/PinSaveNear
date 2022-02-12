@@ -38,10 +38,8 @@
 GitHub Discussion: <!--Start a disucssion with the community here: https://github.com/filecoin-project/community/discussions/new and attach the link!-->  
 Email:  
 Slack:  
-Twitter:  
+Twitter:  @dspytdao
 Discord:  
-Telegram:  
-WeChat:  
 
 ## How to Contribute
 <!--How can the community contribute to your project?-->
