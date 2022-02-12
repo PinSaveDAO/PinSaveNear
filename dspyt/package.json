@@ -10,7 +10,7 @@
     "net": false,
     "stream": false,
     "tls": false
-    },
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
