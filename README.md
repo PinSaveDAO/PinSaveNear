@@ -1,13 +1,15 @@
 # FileCoin_Mint
 
-## Category 
-<!--developer tooling, application, wallet, infrastructure, etc-->
+## Category
+
+Application
 
 ## Project Description
-<!--Describe your project in a few sentences. -->
+An interactive web application to upload and view images. The application interacts with Filecoin and IPFS. In particular, nft.storage provides api access for the applciation to store files.
 
 ## Project Status
-<!--brainstorming, fundraising, under development, beta, shipped, etc-->
+
+under development
 
 ## Previews
 <!--Add some screenshots to give a preview of your product-->
@@ -22,24 +24,23 @@
 <!--Attach a link to your GitHub repo if it's OSS-->
 
 ## Website
-<!--Link your website if available-->
+https://file-coin-mint.vercel.app/
 
 ## Docs
 <!--Including a link to your project docs!-->
 
 ## Team Info
-<!-- Introduce your amazing team - how many team members are working on this project and who are they?-->
+
 
 ### Team Size  
 
 ### Team members  
 
 ## How the community can engage
-GitHub Discussion: <!--Start a disucssion with the community here: https://github.com/filecoin-project/community/discussions/new and attach the link!-->  
-Email:  
-Slack:  
-Twitter:  @dspytdao
-Discord:  
+[GitHub Discussion](https://github.com/filecoin-project/community/discussions/466)
+
+[Twitter](https://twitter.com/DspytDAO)
+
+[Discord](https://discord.gg/peRHyNZrss)
 
 ## How to Contribute
-<!--How can the community contribute to your project?-->
