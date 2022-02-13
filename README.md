@@ -1,4 +1,4 @@
-# ipfs-gallery
+# Dspyt-NFTs (ipfs-gallery)
 
 ## Category
 
@@ -14,8 +14,17 @@ Further we consider to add minting NFTs in the application.
 
 Under development in [Encode Filecoin Accelerator](https://medium.com/encode-club/announcing-the-encode-filecoin-accelerator-c55f09264e8c)
 
+### Plans
+
+* Extend IPFS storage to web3.storage
+* Mint uploaded images
+* Add Machine Learning Algorithm that will create metadata
+
 ## Previews
-![](https://github.com/dspytdao/Dspyt-NFTs/blob/main/assets/image1.jpg)
+
+[NFT hack 2022 || ETHGlobal](https://showcase.ethglobal.com/nfthack2022/dspyt-nfts)
+
+[Live Demo](https://file-coin-mint.vercel.app/)
 
 ## Target Audience
 
@@ -30,8 +39,6 @@ NFT projects
 
 ## Website
 
-[NFT hack 2022 || ETHGlobal](https://showcase.ethglobal.com/nfthack2022/dspyt-nfts)
-
 [Live Demo](https://file-coin-mint.vercel.app/)
 
 
@@ -41,8 +48,8 @@ NFT projects
 
 ## Team Info
 
-
 ### Team Size  
+
 3
 ### Team members  
 
@@ -54,7 +61,9 @@ NFT projects
 
 ## How the community can engage
 
-[GitHub Discussion](https://github.com/filecoin-project/community/discussions/466)
+[GitHub Filecoin Discussion](https://github.com/filecoin-project/community/discussions/466)
+
+[GitHub IPFS Discussion](https://github.com/ipfs/community/discussions/738)
 
 [Twitter](https://twitter.com/DspytDAO)
 
@@ -63,3 +72,5 @@ NFT projects
 ## How to Contribute
 
 Contact us on Social Media and/or open an Issue on GitHub
+
+We really appreciate your feedback
