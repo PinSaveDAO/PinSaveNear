@@ -7,7 +7,7 @@ function Home() {
 
   useEffect(() => {
     fetchComments();
-  }, [comments])
+  }, [])
 
   const fetchComments = async()=>{
     const response = await axios({
