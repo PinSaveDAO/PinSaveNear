@@ -22,15 +22,15 @@ function Home() {
   }
 
   if (isLoading) {
-    return <div >
-      <div> Loading... </div>
+    return <div className="text-center mt-5">
+      Loading...
       </div>
   }
 
   return (
     <div className="container">
       <div className="row align-items-center my-5">
-        <div className="col-lg-5">
+        
           {
           comments.map((x) => (
             <div>
@@ -39,13 +39,13 @@ function Home() {
             src={`https://${x.cid}.ipfs.dweb.link`}
             alt=""
           />
-              {`cid:${x.cid}`}
+             <p> {`cid:${x.cid}`} </p>
             </div>
           ))
           }
         </div>
       </div>
-    </div>
+    
       );
     }
 

@@ -23,7 +23,7 @@ function Upload() {
   return (
     <div>
       <h1 className="text-center mt-5">Upload and Display Image</h1>
-
+      <div className="text-center mt-5">
       <input
         type="file"
         name="myImage"
@@ -32,7 +32,7 @@ function Upload() {
           setState(true);
         }}
       />
-
+      </div>
       {state && (
         <div>
         <br />
