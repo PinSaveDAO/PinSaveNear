@@ -17,43 +17,36 @@ function Home() {
         Authorization: process.env.REACT_APP_API
       }
     })
-    console.log(response.status)
-    console.log(response.data)
     setComments(response.data.value)
     setIsLoading(false)
   }
 
   if (isLoading) {
-    return <div class="container">
-      <div>Loading...</div>
+    return <div >
+      <div> Loading... </div>
       </div>
   }
 
   return (
-    <div className="home">
-    <div class="container">
-      <div class="row align-items-center my-5">
-        <div class="col-lg-5">
-          <p>
+    <div className="container">
+      <div className="row align-items-center my-5">
+        <div className="col-lg-5">
           {
           comments.map((x) => (
-            <p> 
+            <div>
             <img
-            class="img-fluid rounded mb-4 mb-lg-0"
+            className="img-fluid rounded mb-4 mb-lg-0"
             src={`https://${x.cid}.ipfs.dweb.link`}
             alt=""
           />
               {`cid:${x.cid}`}
-            </p>
+            </div>
           ))
           }
-          </p>
         </div>
       </div>
-    </div>
     </div>
       );
     }
 
 export default Home;
-

@@ -36,13 +36,13 @@ function Upload() {
       {state && (
         <div>
         <br />
-        <button onClick={str}>Submit</button>
+        <button onClick={str}> Submit </button>
         </div>
       )}
 
       {data && (
         <div > 
-          {data}
+          {`Uploaded cid:${data}`}
         </div>
       )}
     </div>
