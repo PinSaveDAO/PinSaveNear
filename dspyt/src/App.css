@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
+  max-width: 500px;
+  width: 50%;
+  margin: 0 auto;
+}

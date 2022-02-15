@@ -29,7 +29,7 @@ function Home() {
 
   return (
     <div className="container">
-      <div className="row align-items-center my-5">
+      <div className="gallery-grid ">
         
           {
           comments.map((x) => (
