@@ -6,10 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   Navigation,
   Home,
-  Upload,
-  Blog,
-  Posts,
-  Post,
+  Upload
 } from "./components";
 
 ReactDOM.render(
@@ -18,10 +15,6 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/upload" element={<Upload />} />
-      <Route path="/blog" element={<Blog />}>
-        <Route path="" element={<Posts />} />
-        <Route path=":postSlug" element={<Post />} />
-      </Route>
     </Routes>
   </Router>,
 

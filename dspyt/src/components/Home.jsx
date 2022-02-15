@@ -10,15 +10,15 @@ function Home() {
   }, [comments])
 
   const fetchComments = async()=>{
-    const response=await axios({
+    const response = await axios({
       method: 'get',
       url: process.env.REACT_APP_URL,
       headers: {
         Authorization: process.env.REACT_APP_API
       }
     })
-    //console.log(response.status)
-    //console.log(response.data)
+    console.log(response.status)
+    console.log(response.data)
     setComments(response.data.value)
     setIsLoading(false)
   }

@@ -22,11 +22,6 @@ function Navigation() {
                   Upload
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/blog">
-                  About
-                </NavLink>
-              </li>
             </ul>
           </div>
         </div>
