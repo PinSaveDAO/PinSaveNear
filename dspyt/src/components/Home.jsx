@@ -29,7 +29,7 @@ function Home() {
   }
 
   return (
-    <div className="container my-4">
+    <div className="mx-4 md:mx-16 lg:mx-32 my-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4">
           {
           comments.map((x) => (
