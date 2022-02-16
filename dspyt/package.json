@@ -18,9 +18,10 @@
     "axios": "^0.24.0",
     "fs": "^0.0.1-security",
     "nth-check": "^2.0.1",
-    "postcss": "^8.4.6",
+    "phosphor-react": "^1.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hot-toast": "^2.2.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "typescript": "^4.5.5",
@@ -49,5 +50,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.22"
   }
 }

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios'
-
+import {CopySimple} from "phosphor-react"
+import toast from 'react-hot-toast';
 function Home() {
   const [comments, setComments] = useState([])
   const [isLoading, setIsLoading] = useState(true);
@@ -28,18 +29,31 @@ function Home() {
   }
 
   return (
-    <div className="container">
-      <div className="gallery-grid ">
-        
+    <div className="container my-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4">
           {
           comments.map((x) => (
-            <div>
+            <div className="rounded-md bg-slate-50 shadow-slate-600/40 shadow-md">
             <img
-            className="img-fluid rounded mb-4 mb-lg-0"
+            className="my-4 mx-auto rounded-md max-h-60"
             src={`https://${x.cid}.ipfs.dweb.link`}
             alt=""
           />
-             <p> {`cid:${x.cid}`} </p>
+             <button className="flex p-1 mx-auto my-2 rounded-full bg-blue-700 text-white"
+              onClick={() => {
+                navigator.clipboard.writeText(x.cid);
+                toast('cID copied successfully',{
+                  icon: '📋',
+                  style: {
+                    borderRadius: '10px',
+                    background: '#222',
+                    color: '#fff',
+                  },
+                })
+                }}>
+               Copy cID
+              <CopySimple size={24} className="mx-2"  />
+            </button>
             </div>
           ))
           }
