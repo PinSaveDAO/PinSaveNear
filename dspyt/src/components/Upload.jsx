@@ -3,6 +3,7 @@ import axios from "axios";
 import { SpinnerGap } from "phosphor-react";
 import toast from "react-hot-toast";
 function Upload() {
+  ///TODO: Switch to nft.storage lib
   const [selectedImage, setSelectedImage] = useState(null);
   const [state, setState] = useState(false);
   const [data, setData] = useState();
