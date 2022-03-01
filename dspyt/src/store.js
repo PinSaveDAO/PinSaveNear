@@ -1,13 +1,14 @@
-import create from 'zustand';
-export const useStore = create(set => ({
-    contract:null,
-    currentUser:null,
-    nearConfig:null,
-    wallet:null,
-    setUpStore: (contract,currentUser,nearConfig,wallet)=> set(state=>({
-        contract:contract,
-        currentUser:currentUser,
-        nearConfig:nearConfig,
-        wallet:wallet
-    }))
-}))
+import create from "zustand";
+export const useStore = create((set) => ({
+  contract: null,
+  currentUser: null,
+  nearConfig: null,
+  wallet: null,
+  setUpStore: (contract, currentUser, nearConfig, wallet) =>
+    set((state) => ({
+      contract: contract,
+      currentUser: currentUser,
+      nearConfig: nearConfig,
+      wallet: wallet,
+    })),
+}));
