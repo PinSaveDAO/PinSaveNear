@@ -12,9 +12,11 @@ function Navigation() {
     wallet.requestSignIn(
       {
         contractId: nearConfig.contractName,
-        methodNames: [contract.nftMint.name],
+        methodNames: [contract.nft_mint.name],
       }, //contract requesting access
-      "DspytNFTs"
+      "DspytNFTs",
+      null,
+      null
     );
   };
   return (

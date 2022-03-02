@@ -2,17 +2,31 @@ import { useState, useRef } from "react";
 import axios from "axios";
 import { SpinnerGap } from "phosphor-react";
 import toast from "react-hot-toast";
+import Big from "big.js";
+import { useStore } from "../store";
+const BOATLOAD_OF_GAS = Big(3)
+  .times(10 ** 13)
+  .toFixed();
+
 function Upload() {
   ///TODO: Switch to nft.storage lib
+  const currentUser = useStore((state) => state.currentUser);
+  const contract = useStore((state) => state.contract);
   const [selectedImage, setSelectedImage] = useState(null);
   const [state, setState] = useState(false);
-  const [data, setData] = useState();
+  const [postId, setPostId] = useState("");
+  const [postDesc, setPostDesc] = useState("");
+  const [postTitle, setPostTitle] = useState("");
   const [uploading, setUploading] = useState();
   const hiddenFileInput = useRef();
+  function filledFields() {
+    return postId !== "" && postDesc !== "" && postTitle !== "";
+  }
   async function str() {
-    if (!uploading) {
+    const filled = filledFields();
+    if (!uploading && currentUser && contract && filled) {
       setUploading(true);
-      const response = await axios({
+      await axios({
         method: "post",
         url: process.env.REACT_APP_UPLOAD,
         headers: {
@@ -20,23 +34,79 @@ function Upload() {
           "Content-Type": "image/*",
         },
         data: selectedImage,
-      }).then(() => {
-        toast.success("Image Uploaded Successfully", {
-          style: {
-            borderRadius: "10px",
-            background: "#222",
-            color: "#fff",
-          },
-        });
-        setUploading(false);
+      }).then(async (r) => {
+        await contract
+          .nft_mint(
+            {
+              token_id: postId,
+              metadata: {
+                title: postTitle,
+                description: postDesc,
+                media: `https://${r.data.value.cid}.ipfs.dweb.link/`,
+              },
+              receiver_id: `${currentUser.accountId}`,
+            },
+            BOATLOAD_OF_GAS,
+            Big("1")
+              .times(10 ** 22)
+              .toFixed()
+          )
+          .then(() => {
+            toast.success("Image Uploaded Successfully", {
+              style: {
+                borderRadius: "10px",
+                background: "#222",
+                color: "#fff",
+              },
+            });
+            setUploading(false);
+          });
       });
-      setData(response.data.value.cid);
     }
   }
 
   return (
     <div className="mx-3">
-      <h1 className="text-center mt-5">Upload and Display Image</h1>
+      <h1 className="text-center mt-5">Upload new Posting</h1>
+      <div className="mt-6 max-w-screen-md mx-auto">
+        <div className="items-center -mx-2 md:flex">
+          <div className="w-full mx-2">
+            <label className="block mb-2 text-sm font-medium text-gray-600">
+              Name id
+            </label>
+            <input
+              value={postId}
+              onChange={(e) => setPostId(e.target.value)}
+              className="block w-11/12 md:w-full px-4 py-2 text-gray-700 bg-white border rounded-md  focus:border-blue-400 focus:ring-blue-300 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              type="text"
+            />
+          </div>
+
+          <div className="w-full mx-2 mt-4 md:mt-0">
+            <label className="block mb-2 text-sm font-medium text-gray-600">
+              Title
+            </label>
+            <input
+              value={postTitle}
+              onChange={(e) => setPostTitle(e.target.value)}
+              className="block w-11/12 md:w-full px-4 py-2 text-gray-700 bg-white border rounded-md  focus:border-blue-400 focus:ring-blue-300 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              type="text"
+            />
+          </div>
+        </div>
+
+        <div className="w-full mt-4">
+          <label className="block mb-2 text-sm font-medium text-gray-600">
+            Description
+          </label>
+
+          <textarea
+            value={postDesc}
+            onChange={(e) => setPostDesc(e.target.value)}
+            className="block w-full h-40 px-4 py-2 text-gray-700 bg-white border rounded-md  focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"
+          ></textarea>
+        </div>
+      </div>
       <div className="text-center mt-5">
         <div className="rounded-md border-dashed border-4 max-w-screen-md p-3 mx-auto">
           <input
@@ -85,8 +155,6 @@ function Upload() {
           </button>
         </div>
       )}
-
-      {data && <div>{`Uploaded cid:${data}`}</div>}
     </div>
   );
 }
