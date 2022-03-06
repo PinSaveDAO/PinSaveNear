@@ -23,12 +23,13 @@ function Navigation() {
     <nav className="bg-slate-800  px-2 sm:px-4 py-2.5 shadow-slate-500/50 shadow-xl">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <NavLink
-          className="flex text-white self-center text-2xl font-semibold whitespace-nowrap"
+          className="text-white flex self-center text-2xl mr-4 font-semibold whitespace-nowrap"
           to="/"
         >
-          Dspyt-NFTs
+          <span className="md:hidden">D_NFTs</span>
+          <span className="hidden md:flex">Dspyt-NFTs</span>
         </NavLink>
-        <div className="flex order-2 ml-12">
+        <div className="flex order-2 md:ml-12">
           <div className="block md:hidden mx-4">
             <Menu>
               <Menu.Button className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
