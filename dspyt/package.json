@@ -17,6 +17,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "@textile/hub": "^6.3.3",
     "axios": "^0.24.0",
     "big.js": "^6.1.1",
     "fs": "^0.0.1-security",
@@ -28,6 +29,7 @@
     "react-hot-toast": "^2.2.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "sass": "^1.49.9",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.2",
     "zustand": "^3.7.1"

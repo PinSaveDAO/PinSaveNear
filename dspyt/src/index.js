@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.scss";
 import App from "./App";
 import getConfig from "./config.js";
 import * as nearAPI from "near-api-js";
@@ -42,7 +42,7 @@ async function initContract() {
     nearConfig.contractName,
     {
       // View methods are read-only – they don't modify the state, but usually return some value
-      viewMethods: ["nft_total_supply", "nft_supply_for_owner", "nft_tokens"],
+      viewMethods: ["nft_total_supply", "nft_supply_for_owner", "nft_tokens","nft_token"],
       // Change methods can modify the state, but you don't receive the returned value when called
       changeMethods: ["nft_mint"],
       // Sender is the account ID to initialize transactions.
