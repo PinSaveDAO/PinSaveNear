@@ -26,7 +26,7 @@ function Home() {
 
   return (
     <div className="mx-4 md:mx-16 lg:mx-32 mt-12">
-      <div className="md:masonry-2-col lg:masonry-3-col box-border mx-auto before:box-inherit after:box-inherit">
+      <div className="md:masonry-2-col lg:masonry-3-col xl:masonry-4-col box-border mx-auto before:box-inherit after:box-inherit">
         {posts.map((item, i) => (
           <Link to={`/post/${item.token_id}`}>
           <div
