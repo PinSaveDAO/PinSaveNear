@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { useStore } from "../store";
-import { CopySimple } from "phosphor-react";
-import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 function Home() {
   const [posts, setPosts] = useState([]);
