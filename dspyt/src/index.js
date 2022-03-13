@@ -21,6 +21,9 @@ async function initContract() {
   // Initialize wallet connection
   const walletConnection = new nearAPI.WalletConnection(near);
 
+  // Initialize 3box
+
+  
   // Load in user's account data
   let currentUser;
   if (walletConnection.getAccountId()) {

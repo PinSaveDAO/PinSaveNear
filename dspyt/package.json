@@ -13,6 +13,10 @@
     "tls": false
   },
   "dependencies": {
+    "@3id/connect": "^0.2.5",
+    "@ceramicnetwork/3id-did-resolver": "^1.4.16",
+    "@ceramicnetwork/http-client": "^1.5.7",
+    "@ceramicnetwork/stream-tile": "^1.5.7",
     "@headlessui/react": "^1.5.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -20,6 +24,7 @@
     "@textile/hub": "^6.3.3",
     "axios": "^0.24.0",
     "big.js": "^6.1.1",
+    "dids": "^2.4.3",
     "fs": "^0.0.1-security",
     "near-api-js": "^0.44.2",
     "nth-check": "^2.0.1",
