@@ -1,15 +1,19 @@
 import { useState, useRef } from "react";
+import toast from "react-hot-toast";
 import axios from "axios";
 import { SpinnerGap } from "phosphor-react";
-import toast from "react-hot-toast";
 import Big from "big.js";
+
 import { useStore } from "../store";
+
+
 const BOATLOAD_OF_GAS = Big(3)
   .times(10 ** 13)
   .toFixed();
 
 function Upload() {
   ///TODO: Switch to nft.storage lib
+
   const currentUser = useStore((state) => state.currentUser);
   const contract = useStore((state) => state.contract);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -19,11 +23,25 @@ function Upload() {
   const [postTitle, setPostTitle] = useState("");
   const [uploading, setUploading] = useState();
   const hiddenFileInput = useRef();
+
+  if (!currentUser){
+    return (
+      <div className="text-center mt-24">
+         <h1 className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
+            420
+         </h1>
+         <h2 className="text-2xl md:text-4xl font-bold">Please Log In</h2>
+      </div>
+    )
+  }
+
   function filledFields() {
     return postId !== "" && postDesc !== "" && postTitle !== "";
   }
+
   async function str() {
     const filled = filledFields();
+
     if (!uploading && currentUser && contract && filled) {
       setUploading(true);
       await axios({
@@ -130,7 +148,7 @@ function Upload() {
             />
           )}
           <button
-            onClick={(e) => {
+            onClick={() => {
               hiddenFileInput.current.click();
             }}
             className="text-emerald-50 font-semibold m-3 text-lg p-2 rounded-full  bg-sky-600"

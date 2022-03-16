@@ -1,8 +1,11 @@
-import { useStore } from "../store";
 import { NavLink } from "react-router-dom";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { CaretDown, House, List, SignOut, UploadSimple } from "phosphor-react";
+
+import { useStore } from "../store";
+
+
 function Navigation() {
   const wallet = useStore((state) => state.wallet);
   const contract = useStore((state) => state.contract);

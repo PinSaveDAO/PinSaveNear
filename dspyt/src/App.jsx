@@ -1,14 +1,19 @@
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import { Navigation, Home, Upload,Post } from "./components";
 import { useStore } from "./store";
+
+
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
 
   const initNear = useStore((state) => state.setUpStore);
+  
   useEffect(() => {
     initNear(contract, currentUser, nearConfig, wallet);
   }, []);
+
   return (
     <Router>
       <Navigation />

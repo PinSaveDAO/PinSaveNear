@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Contract, connect, keyStores, WalletConnection } from "near-api-js";
+
 import "./index.scss";
 import App from "./App";
 import getConfig from "./config.js";
-import * as nearAPI from "near-api-js";
+
 
 // Initializing contract
 async function initContract() {
@@ -13,17 +15,14 @@ async function initContract() {
 
   // create a keyStore for signing transactions using the user's key
   // which is located in the browser local storage after user logs in
-  const keyStore = new nearAPI.keyStores.BrowserLocalStorageKeyStore();
+  const keyStore = new keyStores.BrowserLocalStorageKeyStore();
 
   // Initializing connection to the NEAR testnet
-  const near = await nearAPI.connect({ keyStore, ...nearConfig });
+  const near = await connect({ keyStore, ...nearConfig });
 
   // Initialize wallet connection
-  const walletConnection = new nearAPI.WalletConnection(near);
+  const walletConnection = new WalletConnection(near);
 
-  // Initialize 3box
-
-  
   // Load in user's account data
   let currentUser;
   if (walletConnection.getAccountId()) {
@@ -36,7 +35,7 @@ async function initContract() {
   }
 
   // Initializing our contract APIs by contract name and configuration
-  const contract = await new nearAPI.Contract(
+  const contract = new Contract(
     // User's accountId as a string
     walletConnection.account(),
     // accountId of the contract we will be loading

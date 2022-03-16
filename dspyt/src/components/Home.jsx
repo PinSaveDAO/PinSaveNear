@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import { useStore } from "../store";
 import { Link } from "react-router-dom";
+
+import { useStore } from "../store";
+
+
 function Home() {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
