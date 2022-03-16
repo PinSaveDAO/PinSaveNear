@@ -5,11 +5,13 @@ export const useStore = create((set) => ({
   currentUser: null,
   nearConfig: null,
   wallet: null,
-  setUpStore: (contract, currentUser, nearConfig, wallet) =>
+  didcontract: null,
+  setUpStore: (contract, currentUser, nearConfig, wallet, didcontract) =>
     set(() => ({
       contract: contract,
       currentUser: currentUser,
       nearConfig: nearConfig,
       wallet: wallet,
+      didcontract: didcontract,
     })),
 }));

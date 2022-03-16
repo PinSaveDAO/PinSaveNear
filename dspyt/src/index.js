@@ -53,11 +53,19 @@ async function initContract() {
     }
   );
 
-  return { contract, currentUser, nearConfig, walletConnection };
+  //return { contract, currentUser, nearConfig, walletConnection };
+
+  const didContract = new Contract(walletConnection.account(), 'dids.vitalpointai.testnet', {
+    viewMethods: ['getDID', 'hasDID', 'findAlias', 'getAliases', 'getDefinitions'],
+    changeMethods: []
+  })
+
+  return { contract, currentUser, nearConfig, walletConnection, didContract };
+
 }
 
 initContract().then(
-  ({ contract, currentUser, nearConfig, walletConnection }) => {
+  ({ contract, currentUser, nearConfig, walletConnection, didContract }) => {
     ReactDOM.render(
       <React.StrictMode>
         <App
@@ -65,6 +73,7 @@ initContract().then(
           currentUser={currentUser}
           nearConfig={nearConfig}
           wallet={walletConnection}
+          didContract={didContract}
         />
       </React.StrictMode>,
 

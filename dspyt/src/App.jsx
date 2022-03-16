@@ -6,12 +6,12 @@ import { Navigation, Home, Upload,Post } from "./components";
 import { useStore } from "./store";
 
 
-const App = ({ contract, currentUser, nearConfig, wallet }) => {
+const App = ({ contract, currentUser, nearConfig, wallet, didcontract }) => {
 
   const initNear = useStore((state) => state.setUpStore);
   
   useEffect(() => {
-    initNear(contract, currentUser, nearConfig, wallet);
+    initNear(contract, currentUser, nearConfig, wallet, didcontract);
   }, []);
 
   return (
