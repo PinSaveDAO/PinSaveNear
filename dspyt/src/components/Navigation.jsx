@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { CaretDown, House, List, SignOut, UploadSimple } from "phosphor-react";
+import { ArchiveTray, CaretDown, House, List, SignOut, UploadSimple } from "phosphor-react";
 
 import { useStore } from "../store";
 
@@ -56,8 +56,7 @@ function Navigation() {
                       <div className="w-full p-1 hover:bg-slate-600/20">
                         <NavLink
                           className={(isActive) =>
-                            ` ${
-                              isActive ? "text-black" : "text-gray-500"
+                            ` ${isActive ? "text-black" : "text-gray-500"
                             } rounded-md p-2 hover:text-black/40 flex`
                           }
                           to="/"
@@ -74,8 +73,7 @@ function Navigation() {
                       <div className="w-full p-1 hover:bg-slate-600/20">
                         <NavLink
                           className={(isActive) =>
-                            `${
-                              isActive ? "text-black" : "text-gray-500"
+                            `${isActive ? "text-black" : "text-gray-500"
                             } rounded-md p-2  hover:text-black/40 flex`
                           }
                           to="/upload"
@@ -85,6 +83,23 @@ function Navigation() {
                             aria-hidden="true"
                           />
                           Upload
+                        </NavLink>
+                      </div>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <div className="w-full p-1 hover:bg-slate-600/20">
+                        <NavLink
+                          className={(isActive) =>
+                            `${isActive ? "text-black" : "text-gray-500"
+                            } rounded-md p-2  hover:text-black/40 flex`
+                          }
+                          to="/saved"
+                        >
+                          <ArchiveTray
+                            className="w-5 h-5 mr-4 my-auto"
+                            aria-hidden="true"
+                          />
+                          Saved Posts
                         </NavLink>
                       </div>
                     </Menu.Item>
@@ -141,11 +156,10 @@ function Navigation() {
                               window.location.origin + window.location.pathname
                             );
                           }}
-                          className={`${
-                            active
-                              ? "bg-red-600 text-gray-200"
-                              : "text-gray-900"
-                          } group flex rounded-b-md transition items-center w-full px-2 py-2 text-sm`}
+                          className={`${active
+                            ? "bg-red-600 text-gray-200"
+                            : "text-gray-900"
+                            } group flex rounded-b-md transition items-center w-full px-2 py-2 text-sm`}
                         >
                           <SignOut
                             className="w-5 h-5 mr-4 my-auto"
@@ -167,8 +181,7 @@ function Navigation() {
             <li>
               <NavLink
                 className={(isActive) =>
-                  `hover:bg-slate-600/20 ${
-                    isActive ? "text-white" : "text-gray-500"
+                  `hover:bg-slate-600/20 ${isActive ? "text-white" : "text-gray-500"
                   } rounded-md p-2 hover:text-white/40`
                 }
                 to="/"
@@ -179,13 +192,23 @@ function Navigation() {
             <li>
               <NavLink
                 className={(isActive) =>
-                  `hover:bg-slate-600/20 ${
-                    isActive ? "text-white" : "text-gray-500"
+                  `hover:bg-slate-600/20 ${isActive ? "text-white" : "text-gray-500"
                   } rounded-md p-2 hover:text-white/40`
                 }
                 to="/upload"
               >
                 Upload
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={(isActive) =>
+                  `hover:bg-slate-600/20 ${isActive ? "text-white" : "text-gray-500"
+                  } rounded-md p-2 hover:text-white/40`
+                }
+                to="/saved"
+              >
+                Saved Posts
               </NavLink>
             </li>
           </ul>
