@@ -36,7 +36,7 @@
     "zustand": "^3.7.1"
   },
   "scripts": {
-    "build": "react-app-rewired build",
+    "build": "CI=false react-app-rewired build",
     "start": "set WDS_SOCKET_PORT=0 && react-app-rewired start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
