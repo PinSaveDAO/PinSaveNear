@@ -16,21 +16,22 @@ Under development in [Encode Filecoin Accelerator](https://medium.com/encode-clu
 
 ### Plans
 
-* Extend IPFS storage to web3.storage
-* Mint uploaded images
-* Add Machine Learning Algorithm that will create metadata
+- Extend IPFS storage to web3.storage
+- Mint uploaded images
+- Add Machine Learning Algorithm that will create metadata
 
 ## Previews
 
 [NFT hack 2022 || ETHGlobal](https://showcase.ethglobal.com/nfthack2022/dspyt-nfts)
 
-[Live Demo](https://file-coin-mint.vercel.app/)
+[Live Demo](https://dspyt-nft-s.vercel.app/)
 
 ## Target Audience
 
 NFT projects
 
 ## Rough estimated user base (if applicable)
+
 <!--How many users do you have right now?-->
 
 ## Github repo
@@ -39,8 +40,7 @@ NFT projects
 
 ## Website
 
-[Live Demo](https://file-coin-mint.vercel.app/)
-
+[Live Demo](https://dspyt-nft-s.vercel.app/)
 
 ## Docs
 
@@ -48,10 +48,11 @@ NFT projects
 
 ## Team Info
 
-### Team Size  
+### Team Size
 
 3
-### Team members  
+
+### Team members
 
 [DspytDAO](https://twitter.com/DspytDAO)
 
