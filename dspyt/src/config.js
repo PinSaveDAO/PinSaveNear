@@ -1,4 +1,4 @@
-const CONTRACT_NAME = process.env.REACT_CONTRACT_NAME || "dspytnfts.testnet";
+const CONTRACT_NAME = process.env.REACT_CONTRACT_NAME || "pinsave.testnet";
 
 function getConfig(env) {
   switch (env) {

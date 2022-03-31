@@ -17,7 +17,7 @@ function Navigation() {
         contractId: nearConfig.contractName,
         methodNames: [contract.nft_mint.name],
       }, //contract requesting access
-      "DspytNFTs",
+      "PinSave",
       null,
       null
     );
@@ -29,8 +29,8 @@ function Navigation() {
           className="text-white flex self-center text-2xl mr-4 font-semibold whitespace-nowrap"
           to="/"
         >
-          <span className="md:hidden">D_NFTs</span>
-          <span className="hidden md:flex">Dspyt-NFTs</span>
+          <span className="md:hidden">PSave</span>
+          <span className="hidden md:flex">PinSave</span>
         </NavLink>
         <div className="flex order-2 md:ml-12">
           <div className="block md:hidden mx-4">
