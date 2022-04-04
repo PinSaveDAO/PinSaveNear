@@ -24,13 +24,13 @@ function Upload() {
   const [uploading, setUploading] = useState();
   const hiddenFileInput = useRef();
 
-  if (!currentUser){
+  if (!currentUser) {
     return (
       <div className="text-center mt-24">
-         <h1 className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
-            420
-         </h1>
-         <h2 className="text-2xl md:text-4xl font-bold">Please Log In</h2>
+        <h1 className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
+          420
+        </h1>
+        <h2 className="text-2xl md:text-4xl font-bold">Please Log In</h2>
       </div>
     )
   }
@@ -85,7 +85,7 @@ function Upload() {
 
   return (
     <div className="mx-3">
-      <h1 className="text-center mt-5">Upload new Posting</h1>
+      <h1 className="text-center mt-5">Upload a new Post</h1>
       <div className="mt-6 max-w-screen-md mx-auto">
         <div className="items-center -mx-2 md:flex">
           <div className="w-full mx-2">

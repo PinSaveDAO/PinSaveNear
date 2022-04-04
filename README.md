@@ -26,6 +26,10 @@ Under development in [Encode Filecoin Accelerator](https://medium.com/encode-clu
 
 [Live Demo](https://dspyt-nft-s.vercel.app/)
 
+## Demo
+
+[YouTube](https://www.youtube.com/watch?v=B78cZ-UvuIU)
+
 ## Target Audience
 
 NFT projects
