@@ -1,8 +1,4 @@
-# Dspyt-NFTs (ipfs-gallery)
-
-## Category
-
-Application
+# PinSave
 
 ## Project Description
 
@@ -16,45 +12,24 @@ Under development in [Encode Filecoin Accelerator](https://medium.com/encode-clu
 
 ### Plans
 
-- Extend IPFS storage to web3.storage
-- Mint uploaded images
+- Integrate Ceramic to PinSave (upvotes, likes, community feed)
+
 - Add Machine Learning Algorithm that will create metadata
+
+- Integrate Videos
 
 ## Previews
 
 [NFT hack 2022 || ETHGlobal](https://showcase.ethglobal.com/nfthack2022/dspyt-nfts)
 
-[Live Demo](https://dspyt-nft-s.vercel.app/)
+[Live Demo](https://pinsave.vercel.app/)
 
 ## Demo
 
 [YouTube](https://www.youtube.com/watch?v=B78cZ-UvuIU)
 
-## Target Audience
-
-NFT projects
-
-## Rough estimated user base (if applicable)
-
-<!--How many users do you have right now?-->
-
-## Github repo
-
-[Dspyt-NFTs](https://github.com/dspytdao/Dspyt-NFTs)
-
-## Website
-
-[Live Demo](https://dspyt-nft-s.vercel.app/)
-
-## Docs
-
-[Docs](https://github.com/dspytdao/Dspyt-NFTs/blob/main/dspyt/README.md)
-
 ## Team Info
 
-### Team Size
-
-3
 
 ### Team members
 
@@ -76,6 +51,6 @@ NFT projects
 
 ## How to Contribute
 
-Contact us on Social Media and/or open an Issue on GitHub
+Contact us on Social Media and/or open an Issue on GitHub.
 
-We really appreciate your feedback
+We really appreciate your feedback.
