@@ -2,19 +2,19 @@
 
 ## Project Description
 
-An interactive web application built with ReactJS to upload and view images. The application interacts with Filecoin and IPFS. In particular, nft.storage provides an api access for the application to store files.
-
-Further we consider to add minting NFTs in the application.
-
+PinSave makes decentralised version of Pinterest. We are Pavel Fedotov(@pfedprog), Grigore Gabriel Trifan (@grigore_trifan), - members of DspytDAO (@dspytdao).
+We bring further utility to the NFTs, which are stored on ipfs and Filecoin. 
+Now users can instantly create, share and save their decentralized posts. At the moment we have deployed web application on NEAR testnet: https://pinsave.vercel.app/.
+With the help of community we will add further gamification: likes, comments and public/private feed as well as decentralized recommendation engine.
 ## Project Status
 
-Under development in [Encode Filecoin Accelerator](https://medium.com/encode-club/announcing-the-encode-filecoin-accelerator-c55f09264e8c)
+Developed as part of [Encode Filecoin Accelerator](https://medium.com/encode-club/announcing-the-encode-filecoin-accelerator-c55f09264e8c)
 
 ### Plans
 
 - Integrate Ceramic to PinSave (upvotes, likes, community feed)
 
-- Add Machine Learning Algorithm that will create metadata
+- Add Machine Learning Algorithms
 
 - Integrate Videos
 
