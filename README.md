@@ -37,7 +37,7 @@ Developed as part of [Encode Filecoin Accelerator](https://medium.com/encode-clu
 
 [Pavel Fedotov](https://github.com/Pfed-prog)
 
-[Grigore Gabriel Trifan](https://github.com/TheSlayer-666)
+[Grigore Gabriel Trifan](https://github.com/GregTrifan)
 
 ## How the community can engage
 
