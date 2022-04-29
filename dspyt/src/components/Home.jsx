@@ -26,27 +26,37 @@ function Home() {
   }
 
   return (
-    <div className="mx-4 md:mx-16 lg:mx-32 mt-12">
-      <div className="md:masonry-2-col lg:masonry-3-col xl:masonry-4-col box-border mx-auto before:box-inherit after:box-inherit">
-        {posts.map((item, i) => (
+    <section aria-labelledby="products-heading" className="mt-8">
+    <h2 id="products-heading" className="sr-only">
+      Products
+    </h2>
+    <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+        {posts.map((item) => (
           <Link to={`/post/${item.token_id}`}>
-            <div
-              className="break-inside bg-slate-200 shadow-slate-600/40 my-6"
-              key={i}
-            >
-              <div className="bg-black/20 w-full">
+            <div key={item.token_id} className="group">
+            <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden sm:aspect-w-2 sm:aspect-h-3">
+            
                 <img
-                  className="mx-auto max-h-60"
+                  className="w-full h-full object-center object-cover group-hover:opacity-75 aspect-[4/3]"
                   src={item.metadata.media}
                   alt=""
                 />
+
               </div>
-              <h4 className="text-center font-bold my-2">{item.metadata.title}</h4>
+              <div className="pt-10 pb-4 text-center">
+                  <h3 className="text-sm font-medium text-gray-900">
+                    <a href={item.token_id}>
+                      <span aria-hidden="true" className="absolute inset-0" />
+                      {item.metadata.title}
+                    </a>
+                  </h3>
+              </div>
             </div>
           </Link>
         ))}
       </div>
-    </div>
+      </section>
+
   );
 }
 
