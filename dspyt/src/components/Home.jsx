@@ -8,33 +8,31 @@ function Home() {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const contract = useStore((state) => state.contract);
-  useEffect(() => {
-    if (contract)
-      fetchposts();
-  }, [contract]);
 
-  const fetchposts = async () => {
-    const items = await contract.nft_tokens({
-      limit: 50
-    })
-    setPosts(items);
-    setIsLoading(false);
-  };
+  useEffect(() => {
+    async function fetchposts(){
+      const items = await contract.nft_tokens({
+        limit: 10
+      })
+  
+      setPosts(items);
+      setIsLoading(false);
+    }
+    fetchposts();
+  }, [contract]);
 
   if (isLoading) {
     return <div className="text-center mt-5">Loading...</div>;
   }
 
   return (
-    <section aria-labelledby="products-heading" className="mt-8">
-    <h2 id="products-heading" className="sr-only">
-      Products
-    </h2>
-    <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+    <section aria-labelledby="products-heading" className="max-w-7xl mx-auto overflow-hidden sm:px-6 lg:px-8">
+
+      <div className="-mx-px border-l border-gray-200 grid grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
         {posts.map((item) => (
           <Link to={`/post/${item.token_id}`}>
-            <div key={item.token_id} className="group">
-            <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden sm:aspect-w-2 sm:aspect-h-3">
+            <div key={item.token_id} className="group relative p-4 border-r border-b border-gray-200 sm:p-6">
+            <div className="rounded-lg overflow-hidden bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
             
                 <img
                   className="w-full h-full object-center object-cover group-hover:opacity-75 aspect-[4/3]"
@@ -55,7 +53,7 @@ function Home() {
           </Link>
         ))}
       </div>
-      </section>
+    </section>
 
   );
 }
