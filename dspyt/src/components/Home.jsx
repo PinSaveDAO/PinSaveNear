@@ -8,45 +8,53 @@ function Home() {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const contract = useStore((state) => state.contract);
-  useEffect(() => {
-    if (contract)
-      fetchposts();
-  }, [contract]);
 
-  const fetchposts = async () => {
-    const items = await contract.nft_tokens({
-      limit: 50
-    })
-    setPosts(items);
-    setIsLoading(false);
-  };
+  useEffect(() => {
+    async function fetchposts(){
+      const items = await contract.nft_tokens({
+        limit: 10
+      })
+  
+      setPosts(items);
+      setIsLoading(false);
+    }
+    fetchposts();
+  }, [contract]);
 
   if (isLoading) {
     return <div className="text-center mt-5">Loading...</div>;
   }
 
   return (
-    <div className="mx-4 md:mx-16 lg:mx-32 mt-12">
-      <div className="md:masonry-2-col lg:masonry-3-col xl:masonry-4-col box-border mx-auto before:box-inherit after:box-inherit">
-        {posts.map((item, i) => (
+    <section aria-labelledby="products-heading" className="max-w-7xl mx-auto overflow-hidden sm:px-6 lg:px-8">
+
+      <div className="-mx-px border-l border-gray-200 grid grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
+        {posts.map((item) => (
           <Link to={`/post/${item.token_id}`}>
-            <div
-              className="break-inside bg-slate-200 shadow-slate-600/40 my-6"
-              key={i}
-            >
-              <div className="bg-black/20 w-full">
+            <div key={item.token_id} className="group relative p-4 border-r border-b border-gray-200 sm:p-6">
+            <div className="rounded-lg overflow-hidden bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
+            
                 <img
-                  className="mx-auto max-h-60"
+                  className="w-full h-full object-center object-cover group-hover:opacity-75 aspect-[4/3]"
                   src={item.metadata.media}
                   alt=""
                 />
+
               </div>
-              <h4 className="text-center font-bold my-2">{item.metadata.title}</h4>
+              <div className="pt-10 pb-4 text-center">
+                  <h3 className="text-sm font-medium text-gray-900">
+                    <a href={item.token_id}>
+                      <span aria-hidden="true" className="absolute inset-0" />
+                      {item.metadata.title}
+                    </a>
+                  </h3>
+              </div>
             </div>
           </Link>
         ))}
       </div>
-    </div>
+    </section>
+
   );
 }
 
