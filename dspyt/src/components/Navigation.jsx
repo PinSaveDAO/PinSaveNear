@@ -1,12 +1,30 @@
 import { NavLink } from "react-router-dom";
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import { ArchiveTray, CaretDown, House, List, SignOut, UploadSimple } from "phosphor-react";
+//import { Fragment } from "react";
+import { Disclosure, Menu } from "@headlessui/react";
+import { SignOut } from "phosphor-react";
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 import { useStore } from "../store";
 
+const navigation = [
+  { name: 'Home', href: '/', current: false },
+  { name: 'Upload', href: '/upload', current: false },
+  { name: 'Saved', href: '/saved', current: false },
+]
 
-function Navigation() {
+//const userNavigation = [
+  //{name : 'Upload', href: '/upload'}
+ // { name: 'Your Profile', href: '/' },
+  //{ name: 'Settings', href: '/saved' },
+  //{ name: 'Sign out', href: '/' },
+//]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+export default function Navigation() {
+  //const [logined, setLogin] = useState(false);
   const wallet = useStore((state) => state.wallet);
   const contract = useStore((state) => state.contract);
   const nearConfig = useStore((state) => state.nearConfig);
@@ -22,200 +40,147 @@ function Navigation() {
       null
     );
   };
-  return (
-    <nav className="bg-slate-800  px-2 sm:px-4 py-2.5 shadow-slate-500/50 shadow-xl">
-      <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <NavLink
-          className="text-white flex self-center text-2xl mr-4 font-semibold whitespace-nowrap"
-          to="/"
-        >
-          <span className="md:hidden">PSave</span>
-          <span className="hidden md:flex">PinSave</span>
-        </NavLink>
-        <div className="flex order-2 md:ml-12">
-          <div className="block md:hidden mx-4">
-            <Menu>
-              <Menu.Button className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-                <List
-                  aria-hidden="true"
-                  className="w-5 h-5 text-violet-200 hover:text-violet-100"
-                />
-              </Menu.Button>
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className="absolute origin-top-right mt-2 -ml-14 bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div>
-                    <Menu.Item>
-                      <div className="w-full p-1 hover:bg-slate-600/20">
-                        <NavLink
-                          className={(isActive) =>
-                            ` ${isActive ? "text-black" : "text-gray-500"
-                            } rounded-md p-2 hover:text-black/40 flex`
-                          }
-                          to="/"
-                        >
-                          <House
-                            className="w-5 h-5 mr-4 my-auto"
-                            aria-hidden="true"
-                          />
-                          Home
-                        </NavLink>
-                      </div>
-                    </Menu.Item>
-                    <Menu.Item>
-                      <div className="w-full p-1 hover:bg-slate-600/20">
-                        <NavLink
-                          className={(isActive) =>
-                            `${isActive ? "text-black" : "text-gray-500"
-                            } rounded-md p-2  hover:text-black/40 flex`
-                          }
-                          to="/upload"
-                        >
-                          <UploadSimple
-                            className="w-5 h-5 mr-4 my-auto"
-                            aria-hidden="true"
-                          />
-                          Upload
-                        </NavLink>
-                      </div>
-                    </Menu.Item>
-                    <Menu.Item>
-                      <div className="w-full p-1 hover:bg-slate-600/20">
-                        <NavLink
-                          className={(isActive) =>
-                            `${isActive ? "text-black" : "text-gray-500"
-                            } rounded-md p-2  hover:text-black/40 flex`
-                          }
-                          to="/saved"
-                        >
-                          <ArchiveTray
-                            className="w-5 h-5 mr-4 my-auto"
-                            aria-hidden="true"
-                          />
-                          Saved Posts
-                        </NavLink>
-                      </div>
-                    </Menu.Item>
-                  </div>
-                </Menu.Items>
-              </Transition>
-            </Menu>
-          </div>
-          {!currentUser ? (
-            <button
-              onClick={() => ConnectWallet()}
-              className="bg-black transition-all hover:bg-black/60 text-white font-bold p-2 rounded-md"
-            >
-              Connect
-            </button>
-          ) : (
-            <Menu>
-              <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-                {currentUser.accountId}
-                <CaretDown
-                  aria-hidden="true"
-                  className="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100"
-                />
-              </Menu.Button>
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className="absolute origin-top-right w-44 mt-10 ml-12 md:-ml-8 bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div>
-                    <Menu.Item>
-                      <div className="text-gray-900 p-1 group flex border-b-2 transition items-center justify-between  w-full px-2 py-2 text-sm">
-                        <span className="text-xl font-bold mr-2 my-auto">
-                          Ⓝ
-                        </span>
-                        <span className="mt-1">
-                          {(
-                            Number(currentUser.balance) / Math.pow(10, 24)
-                          ).toFixed(3)}
-                        </span>
-                      </div>
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <button
-                          onClick={() => {
-                            wallet.signOut();
-                            window.location.replace(
-                              window.location.origin + window.location.pathname
-                            );
-                          }}
-                          className={`${active
-                            ? "bg-red-600 text-gray-200"
-                            : "text-gray-900"
-                            } group flex rounded-b-md transition items-center w-full px-2 py-2 text-sm`}
-                        >
-                          <SignOut
-                            className="w-5 h-5 mr-4 my-auto"
-                            aria-hidden="true"
-                          />
-                          Log Out
-                        </button>
-                      )}
-                    </Menu.Item>
-                  </div>
-                </Menu.Items>
-              </Transition>
-            </Menu>
-          )}
-        </div>
 
-        <div className="hidden md:block">
-          <ul className="flex my-auto flex-row md:space-x-8 md:text-sm font-medium">
-            <li>
-              <NavLink
-                className={(isActive) =>
-                  `hover:bg-slate-600/20 ${isActive ? "text-white" : "text-gray-500"
-                  } rounded-md p-2 hover:text-white/40`
-                }
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={(isActive) =>
-                  `hover:bg-slate-600/20 ${isActive ? "text-white" : "text-gray-500"
-                  } rounded-md p-2 hover:text-white/40`
-                }
-                to="/upload"
-              >
-                Upload
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={(isActive) =>
-                  `hover:bg-slate-600/20 ${isActive ? "text-white" : "text-gray-500"
-                  } rounded-md p-2 hover:text-white/40`
-                }
-                to="/saved"
-              >
-                Saved Posts
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+
+  return (
+    <Disclosure as="nav" className="bg-gray-800">
+      {({ open }) => (
+        <>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between h-16">
+              <div className="flex">
+                <div className="-ml-2 mr-2 flex items-center md:hidden">
+                  {/* Mobile menu */}
+                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <span className="sr-only">Open main menu</span>
+                    {open ? (
+                      <XIcon className="block h-6 w-6" aria-hidden="true" />
+                    ) : (
+                      <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                    )}
+                  </Disclosure.Button>
+                </div>
+                
+                <div className="flex-shrink-0 flex items-center">
+                  <a href="/">
+                  <img
+                    className="block lg:hidden h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                    alt="Pin Save"
+                  />
+                  <img
+                    className="hidden lg:block h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                    alt="Pin Save"
+                  />
+                  </a>
+                </div>
+                
+                
+                <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
+                  {navigation.map((item) => (
+                    <NavLink
+                      key={item.name}
+                      to={item.href}
+                      className={classNames(
+                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'px-3 py-2 rounded-md text-sm font-medium'
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                    >
+                      {item.name}
+                    </NavLink>
+                  ))}
+                </div>
+
+              </div>
+              <div className="flex items-center">
+                <div className="flex-shrink-0">
+                  { !currentUser  ? (
+                  <button
+                  onClick={() => (
+                    ConnectWallet()
+                    )}
+                    type="button"
+                    className="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500">
+                    Connect
+                  </button>
+                  ) : (
+                    <Menu>
+                    <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                      {currentUser.accountId}
+                    </Menu.Button>
+                  </Menu>
+                  ) }   
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+          <Disclosure.Panel className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as={NavLink}
+                  to={item.href}
+                  className={classNames(
+                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    'block px-3 py-2 rounded-md text-base font-medium'
+                  )}
+                  aria-current={item.current ? 'page' : undefined}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+            </div>
+            {currentUser ? (
+            <div className="pt-4 pb-3 border-t border-gray-700">
+              <div className="mt-3 px-2 space-y-1 sm:px-3">
+ 
+                 {/*userNavigation.map((item) => (
+                  <Disclosure.Button
+                    key={item.name}
+                    as={NavLink}
+                    to={item.href}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                    {item.name}
+                  </Disclosure.Button>
+                 ))*/}
+
+              <span className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 ">
+                                              Ⓝ {(
+                                                Number(currentUser.balance) / Math.pow(10, 24)
+                                              ).toFixed(3)}
+              </span>
+              { (
+                              <Disclosure.Button
+                                onClick={() => {
+                                  wallet.signOut();
+                                  window.location.replace(
+                                    window.location.origin + window.location.pathname
+                                  );
+                                }}
+                                to="/"
+                                className="text-gray-200 group flex rounded-b-md transition items-center w-full px-2 py-2 text-sm hover:text-white hover:bg-red-600"
+                              >
+                                <SignOut
+                                  className="w-5 h-5 mr-4 my-auto"
+                                  aria-hidden="true"
+                                />
+                                Log Out
+                              </Disclosure.Button>
+                            )}
+
+              </div>
+            </div>
+            ) : ""}
+          </Disclosure.Panel>
+        </>
+      )}
+
+    </Disclosure>
   );
 }
-
-export default Navigation;
