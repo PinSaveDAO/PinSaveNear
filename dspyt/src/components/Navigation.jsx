@@ -24,7 +24,7 @@ function classNames(...classes) {
 }
 
 export default function Navigation() {
-  //const [logined, setLogin] = useState(false);
+
   const wallet = useStore((state) => state.wallet);
   const contract = useStore((state) => state.contract);
   const nearConfig = useStore((state) => state.nearConfig);
@@ -62,18 +62,18 @@ export default function Navigation() {
                 </div>
                 
                 <div className="flex-shrink-0 flex items-center">
-                  <a href="/">
+                  <NavLink to="/">
                   <img
                     className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                    src={`${process.env.PUBLIC_URL}/assets/images/PinSave.png`}
                     alt="Pin Save"
                   />
                   <img
                     className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                    src={`${process.env.PUBLIC_URL}/assets/images/PinSaveB.png`}
                     alt="Pin Save"
                   />
-                  </a>
+                  </NavLink>
                 </div>
                 
                 
@@ -151,28 +151,28 @@ export default function Navigation() {
                  ))*/}
 
               <span className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 ">
-                                              Ⓝ {(
-                                                Number(currentUser.balance) / Math.pow(10, 24)
-                                              ).toFixed(3)}
+                Ⓝ {(
+                  Number(currentUser.balance) / Math.pow(10, 24)
+                ).toFixed(3)}
               </span>
               { (
-                              <Disclosure.Button
-                                onClick={() => {
-                                  wallet.signOut();
-                                  window.location.replace(
-                                    window.location.origin + window.location.pathname
-                                  );
-                                }}
-                                to="/"
-                                className="text-gray-200 group flex rounded-b-md transition items-center w-full px-2 py-2 text-sm hover:text-white hover:bg-red-600"
-                              >
-                                <SignOut
-                                  className="w-5 h-5 mr-4 my-auto"
-                                  aria-hidden="true"
-                                />
-                                Log Out
-                              </Disclosure.Button>
-                            )}
+                <Disclosure.Button
+                  onClick={() => {
+                    wallet.signOut();
+                    window.location.replace(
+                      window.location.origin + window.location.pathname
+                    );
+                  }}
+                  to="/"
+                  className="text-gray-200 group flex rounded-b-md transition items-center w-full px-2 py-2 text-sm hover:text-white hover:bg-red-600"
+                >
+                  <SignOut
+                    className="w-5 h-5 mr-4 my-auto"
+                    aria-hidden="true"
+                  />
+                  Log Out
+                </Disclosure.Button>
+              )}
 
               </div>
             </div>
