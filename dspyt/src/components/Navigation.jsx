@@ -65,12 +65,12 @@ export default function Navigation() {
                   <a href="/">
                   <img
                     className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                    src={`${process.env.PUBLIC_URL}/assets/images/Pin.png`}
                     alt="Pin Save"
                   />
                   <img
                     className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                    src={`${process.env.PUBLIC_URL}/assets/images/Pin.png`}
                     alt="Pin Save"
                   />
                   </a>
