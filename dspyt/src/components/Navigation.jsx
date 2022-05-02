@@ -70,7 +70,7 @@ export default function Navigation() {
                   />
                   <img
                     className="hidden lg:block h-8 w-auto"
-                    src={`${process.env.PUBLIC_URL}/assets/images/PinSaveL.png`}
+                    src={`${process.env.PUBLIC_URL}/assets/images/PinSaveB.png`}
                     alt="Pin Save"
                   />
                   </NavLink>
