@@ -11,3 +11,11 @@ Copy `.env.example` to `.env` and replace the API_KEY with your api key from [nf
 ```bash
 npm start
 ```
+
+### Links
+
+/saved
+
+/
+
+/upload

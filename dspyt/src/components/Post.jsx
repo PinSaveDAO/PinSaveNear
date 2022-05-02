@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ArrowSquareOut, Tray } from "phosphor-react";
+
 import { useStore } from "../store";
 
 
@@ -10,22 +11,22 @@ const Post = () => {
   const [saved, setSaved] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const contract = useStore((state) => state.contract);
+
   useEffect(() => {
-    if (contract)
-      fetchPost();
-  }, [contract]);
+    const fetchPost = async () => {
+      const item = await contract.nft_token({
+        token_id: params.token_id
+      })
+      let posts = JSON.parse(localStorage.getItem("saved_posts")) || [];
+      if (posts.includes(item.token_id))
+        setSaved(true);
+      setUserPost(item);
+      setIsLoading(false);
+    };
+    fetchPost();
+}, []);
 
-  const fetchPost = async () => {
-    const item = await contract.nft_token({
-      token_id: params.token_id
-    })
-    let posts = JSON.parse(localStorage.getItem("saved_posts")) || [];
-    if (posts.includes(item.token_id))
-      setSaved(true);
-    setUserPost(item);
-    setIsLoading(false);
 
-  };
   const savePost = async () => {
     if (!saved) {
       let posts = JSON.parse(localStorage.getItem("saved_posts")) || [];
