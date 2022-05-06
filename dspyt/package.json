@@ -23,6 +23,7 @@
     "axios": "^0.24.0",
     "big.js": "^6.1.1",
     "fs": "^0.0.1-security",
+    "hashconnect": "^0.1.6",
     "near-api-js": "^0.44.2",
     "nth-check": "^2.0.1",
     "phosphor-react": "^1.4.0",

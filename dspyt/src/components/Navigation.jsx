@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-//import { Fragment } from "react";
-import { Disclosure, Menu } from "@headlessui/react";
+import { Fragment } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { SignOut } from "phosphor-react";
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
@@ -106,11 +106,56 @@ export default function Navigation() {
                     Connect
                   </button>
                   ) : (
-                    <Menu>
+                  <Menu>
                     <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                       {currentUser.accountId}
                     </Menu.Button>
-                  </Menu>
+                    
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="transform opacity-0 scale-95"
+                      enterTo="transform opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="transform opacity-100 scale-100"
+                      leaveTo="transform opacity-0 scale-95"
+                    >
+                    <Menu.Items className="z-20 absolute origin-top-right w-44 mt-5 ml-12 md:-ml-8 bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div>
+                    <Menu.Item>
+                      <div className="text-gray-900 p-1 group flex border-b-2 transition items-center justify-between  w-full px-2 py-2 text-sm">
+                        Ⓝ {(
+                            Number(currentUser.balance) / Math.pow(10, 24)
+                          ).toFixed(3)}
+                      </div>
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <button
+                          onClick={() => {
+                            wallet.signOut();
+                            window.location.replace(
+                              window.location.origin + window.location.pathname
+                            );
+                          }}
+                          className={`${active
+                            ? "bg-red-600 text-gray-200"
+                            : "text-gray-900"
+                            } group flex rounded-b-md transition items-center w-full px-2 py-2 text-sm`}
+                        >
+                          <SignOut
+                            className="w-5 h-5 mr-4 my-auto"
+                            aria-hidden="true"
+                          />
+                          Log Out
+                        </button>
+                      )}
+                        </Menu.Item>
+                      </div>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+                  
                   ) }   
                 </div>
 
