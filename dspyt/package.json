@@ -18,7 +18,7 @@
     "@supabase/supabase-js": "^1.31.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/user-event": "^14.2.0",
     "@textile/hub": "^6.3.3",
     "axios": "^0.24.0",
     "big.js": "^6.1.1",
