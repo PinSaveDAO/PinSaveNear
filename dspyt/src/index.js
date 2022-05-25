@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Contract, connect, keyStores, WalletConnection } from "near-api-js";
 
-import "./index.scss";
+import "./index.css";
 import App from "./App";
 import getConfig from "./config.js";
 
