@@ -2,27 +2,13 @@
 
 ## Project Description
 
-PinSave makes decentralised version of Pinterest. We are Pavel Fedotov(@pfedprog), Grigore Gabriel Trifan (@grigore_trifan), - members of DspytDAO (@dspytdao).
-We bring further utility to the NFTs, which are stored on ipfs and Filecoin. 
-Now users can instantly create, share and save their decentralized posts. At the moment we have deployed web application on NEAR testnet: https://pinsave.vercel.app/.
-With the help of community we will add further gamification: likes, comments and public/private feed as well as decentralized recommendation engine.
-## Project Status
+Pin Save is a decentralized image sharing and content aggregation platform where users can not only control the content, but also the platform itself.
 
 Developed as part of [Encode Filecoin Accelerator](https://medium.com/encode-club/announcing-the-encode-filecoin-accelerator-c55f09264e8c)
 
-### Plans
-
-- Integrate Ceramic to PinSave (upvotes, likes, community feed)
-
-- Add Machine Learning Algorithms
-
-- Integrate Videos
-
 ## Previews
 
-[NFT hack 2022 || ETHGlobal](https://showcase.ethglobal.com/nfthack2022/dspyt-nfts)
-
-[Live Demo](https://pinsave.vercel.app/)
+[Live Demo](https://pinsave.app/)
 
 ## Demo
 
@@ -30,10 +16,7 @@ Developed as part of [Encode Filecoin Accelerator](https://medium.com/encode-clu
 
 ## Team Info
 
-
 ### Team members
-
-[DspytDAO](https://twitter.com/DspytDAO)
 
 [Pavel Fedotov](https://github.com/Pfed-prog)
 
@@ -45,7 +28,7 @@ Developed as part of [Encode Filecoin Accelerator](https://medium.com/encode-clu
 
 [GitHub IPFS Discussion](https://github.com/ipfs/community/discussions/738)
 
-[Twitter](https://twitter.com/DspytDAO)
+[Twitter](https://twitter.com/PinSav3)
 
 [Discord](https://discord.gg/peRHyNZrss)
 
