@@ -22,7 +22,7 @@
     "@testing-library/user-event": "^14.2.1",
     "@textile/hub": "^6.3.4",
     "axios": "^0.27.2",
-    "big.js": "^6.2.0",
+    "big.js": "^6.2.1",
     "fs": "^0.0.1-security",
     "near-api-js": "^0.45.1",
     "nth-check": "^2.1.1",
