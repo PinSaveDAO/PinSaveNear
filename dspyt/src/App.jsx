@@ -6,14 +6,12 @@ import { Navigation, Home, Upload, Post } from "./components";
 import SavedPosts from "./components/SavedPosts";
 import { useStore } from "./store";
 
-
 const App = ({ contract, currentUser, nearConfig, wallet, didcontract }) => {
-
   const initNear = useStore((state) => state.setUpStore);
 
   useEffect(() => {
     initNear(contract, currentUser, nearConfig, wallet, didcontract);
-  }, []);
+  }, [initNear, contract, currentUser, nearConfig, wallet, didcontract]);
 
   return (
     <Router>
