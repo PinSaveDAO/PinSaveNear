@@ -1,7 +1,7 @@
 {
   "name": "dspyt",
   "version": "0.1.0",
-  "homepage" : ".",
+  "homepage": ".",
   "private": true,
   "browser": {
     "crypto": false,
@@ -16,11 +16,9 @@
   "dependencies": {
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^1.0.6",
-    "@supabase/supabase-js": "^1.35.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^14.4.3",
-    "@textile/hub": "^6.3.4",
     "axios": "^0.27.2",
     "big.js": "^6.2.1",
     "fs": "^0.0.1-security",
