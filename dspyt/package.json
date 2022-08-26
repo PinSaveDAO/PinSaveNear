@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
-    "@heroicons/react": "^1.0.6",
+    "@heroicons/react": "^2.0.7",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^14.4.3",
