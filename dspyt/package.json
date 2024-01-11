@@ -22,7 +22,7 @@
     "axios": "^1.0.0",
     "big.js": "^6.2.1",
     "fs": "^0.0.1-security",
-    "near-api-js": "^2.1.0",
+    "near-api-js": "^3.0.2",
     "nth-check": "^2.1.1",
     "phosphor-react": "^1.4.0",
     "react": "^17.0.2",
