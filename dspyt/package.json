@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@types/big.js": "^6.1.5",
-    "@types/react": "^18.0.17",
+    "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "autoprefixer": "^10.4.8",
     "node-polyfill-webpack-plugin": "^4.0.0",
